@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Карусель</title>
+    <meta charset="UTF-8">
+
+    <style>
+
+        body{
+            background-color: #333;
+        }
+        #slider_container{
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            border-bottom: 5px solid green;
+            overflow: hidden;
+        }
+        .slides{
+            background-color: #fff;
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            height: 100%;
+        }
+        .slides>li{
+            float: left;
+            height: 100%;
+            background-color: #e1e1e1;
+            font-size: 40px;
+        }
+        .slides li:nth-child(even){  /*цвета слайдов*/
+            background-color: #3498db;
+        }
+        .controls{
+            text-align: center;
+            padding-top: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .controls button{
+            border: none;
+            padding: 10px 40px;
+        }
+
+    </style>
+    	
+</head>
+<body>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="carousel.js"></script>
+
+
+<div id="slider_container">
+    <ul class="slides">
+        <li style='background-image:url(img/work-1.jpg)'> 1 </li>
+        <li style='background-image:url(img/work-2.jpg)'> 2 </li>
+        <li style='background-image:url(img/work-3.jpg)'> 3 </li>
+        <li style='background-image:url(img/work-4.jpg)'> 4 </li>
+    </ul>
+    <div class="controls">
+
+        <button id="prevSlide">PREV</button>
+        <button id="nextSlide">NEXT</button>
+    </div>
+</div>
+
+<script>
+ //задаем свои id:   
+// $(document).carousel({
+//              container:'#slider_container',
+//              slides:'.slides',
+//              next:'#prevSlide',
+//              prev: '#nextSlide',
+//              autoscroll: 700,
+// 			});
+
+// $(document).carousel({
+//         autoscroll: 700,
+// });
+
+$(document).carousel();
+
+</script>
+
+</body>
+</html>

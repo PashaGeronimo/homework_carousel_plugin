@@ -5,6 +5,7 @@
              slides:'.slides',
              next:'#prevSlide',
              prev: '#nextSlide',
+             circles: '.dots',
              autoscroll: 700,
 ```
 Вызывается 

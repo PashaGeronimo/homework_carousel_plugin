@@ -89,29 +89,9 @@
             $(options.prev).click(prev);
 
             // autoscroll
-            var intervalID;
             if (options.autoscroll != undefined) {
                 intervalID = setInterval(next, options.autoscroll);
             };
-
-
-            function stop() {
-                clearInterval(intervalID);
-                function timout() {
-                 intervalID = setInterval(next, options.autoscroll);
-                };
-                setTimeout( timout, 2000 );
-                console.log(options.autoscroll);
-            };
-
-             $(options.next).click(stop);
-
-
-
-
-
-
-
 
 
         }

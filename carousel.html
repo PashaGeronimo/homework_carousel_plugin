@@ -45,36 +45,39 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            
         }
         
         .controls button {
             border: none;
             padding: 10px 40px;
         }
-		
-		 .dots {
-		    
-		    position: fixed;
-            height:100px;
-			width:100%;
-            top:400px;
-            
-            
-        }
-		.dots div {
-		   background-color: yellow;
-		   height:20px;
-		   width:20px;
-		   
-		   display:inline-block;
-		   margin:10px;
-		   border-radius:20px;
-		   -moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	border-radius: 20px;
-		}
         
+        .dots {
+            position: fixed;
+            margin: 0 auto;
+            height: 100px;
+            width: 500px;
+            top: 400px;
+            text-align:center;
+        }
+        
+        .dots div {
+
+            background-color: gray;
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            margin: 10px;
+            border-radius: 20px;
+            -moz-border-radius: 20px;
+            -webkit-border-radius: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .dots div:first-child {
+            background-color: red;
+        }
     </style>
 
 </head>
@@ -92,37 +95,37 @@
             <li style='background-image:url(img/work-4.jpg)'> 4 </li>
         </ul>
         <div class="controls">
-
-            <button id="prevSlide">PREV</button>
-            <button id="nextSlide">NEXT</button>
+            <button id="nextSlide">PREV</button>
+            <button id="prevSlide">NEXT</button>
+            
 
         </div>
-		
-	  <div class="dots">
 
-		<div ></div>
-		<div ></div>
-		<div ></div>
-		<div ></div>
+        <div class="dots">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
 
-	  </div>
+        </div>
     </div>
 
     <script>
-        //задаем свои id:   
+        //задаем свои аргументы:   
         // $(document).carousel({
         //              container:'#slider_container',
         //              slides:'.slides',
         //              next:'#prevSlide',
         //              prev: '#nextSlide',
+        //              circles: '.dots',
         //              autoscroll: 700,
         // 			});
 
-        // $(document).carousel({
-        //         autoscroll: 700,
-        // });
+        $(document).carousel({
+                autoscroll: 700,
+        });
 
-        $(document).carousel();
+        // $(document).carousel();
     </script>
 
 </body>

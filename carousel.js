@@ -25,12 +25,6 @@
                 $(this).addClass('' + (+e + 1));
                 ArrDots.push(e + 1);
             });
-            var curr;
-
-            function moveplus() {
-                
-
-            };
 
             // нажатие на точки
             var numbotcur = 1;
@@ -39,13 +33,9 @@
                 var numbdot = $(this).attr('class'); // на какую точку кликнул
 
                 if (numbdot > numbotcur) {
-                    for (var i = numbotcur; i < numbdot; i++) {
-                        next();
-                    };
+                    for (var i = numbotcur; i < numbdot; i++) { next(); };
                 } else if (numbdot < numbotcur) {
-                    for (var i = numbotcur; i > numbdot; i--) {
-                        prev();
-                    };
+                    for (var i = numbotcur; i > numbdot; i--) { prev(); };
                 }
                 numbotcur = numbdot;
             });
@@ -80,7 +70,6 @@
                     $('.' + ArrDots[0]).css({ 'background-color': 'red', });
 
                 });
-
                 numbotcur = ArrDots[1];
             }
 

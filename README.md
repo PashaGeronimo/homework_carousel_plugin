@@ -16,5 +16,5 @@ $(document).carousel();
 ```
 
 
-[Запустить выполнение:](https://cdn.rawgit.com/PashaGeronimo/homework_carousel_plugin_dots/master/carousel.html)
+[Запустить выполнение:](https://rawgit.com/PashaGeronimo/homework_carousel_plugin_dots/master/carousel.html)
 

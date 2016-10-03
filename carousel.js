@@ -45,7 +45,7 @@
 
 
             function prev() {
-                numbotcur = ArrDots[1];
+                
                 $(options.slides).animate({
                     'margin-left': -w
                 }, 400, function() {
@@ -58,10 +58,11 @@
 
 
                 });
+                numbotcur = ArrDots[1];
             }
 
             function next() {
-                numbotcur = ArrDots[1];
+                
                 $(options.slides).animate({
                     'margin-left': w
                 }, 400, function() {
@@ -73,6 +74,7 @@
                     $('.' + ArrDots[0]).css({ 'background-color': 'red', });
 
                 });
+                numbotcur = ArrDots[1];
             }
 
             $(options.next).click(stop).click(next);

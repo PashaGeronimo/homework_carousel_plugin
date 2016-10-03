@@ -31,10 +31,13 @@
             $(options.circles + ' div').click(function() {
                 stop(); //остановка автоскролла
                 var numbdot = $(this).attr('class'); // на какую точку кликнул
-
-                if (numbdot > numbotcur) {
-                    for (var i = numbotcur; i < numbdot; i++) { next(); };
-                } else if (numbdot < numbotcur) {
+                if (numbdot > ArrDots[0]) {
+                    numbotcur = ArrDots[0];
+                    for (var i = numbotcur; i < numbdot; i++) {
+                        next();
+                    };
+                } else if (numbdot < ArrDots[0]) {
+                    numbotcur = ArrDots[0];
                     for (var i = numbotcur; i > numbdot; i--) { prev(); };
                 }
                 numbotcur = numbdot;
@@ -42,6 +45,7 @@
 
 
             function prev() {
+                numbotcur = ArrDots[1];
                 $(options.slides).animate({
                     'margin-left': -w
                 }, 400, function() {
@@ -54,11 +58,10 @@
 
 
                 });
-                numbotcur = ArrDots[1];
             }
 
-
             function next() {
+                numbotcur = ArrDots[1];
                 $(options.slides).animate({
                     'margin-left': w
                 }, 400, function() {
@@ -67,10 +70,10 @@
                     // раскрашивание точек
                     $(options.circles + ' div').css({ 'background-color': 'gray', });
                     ArrDots.push(ArrDots.shift());
+                    console.log('next' + ArrDots[0]);
                     $('.' + ArrDots[0]).css({ 'background-color': 'red', });
 
                 });
-                numbotcur = ArrDots[1];
             }
 
             $(options.next).click(stop).click(next);
@@ -78,6 +81,7 @@
 
             // autoscroll
             var intervalID;
+
             function autoscroll() {
                 if (options.autoscroll != undefined) {
                     intervalID = setInterval(next, options.autoscroll);

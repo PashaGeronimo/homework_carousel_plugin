@@ -70,7 +70,6 @@
                     // раскрашивание точек
                     $(options.circles + ' div').css({ 'background-color': 'gray', });
                     ArrDots.push(ArrDots.shift());
-                    console.log('next' + ArrDots[0]);
                     $('.' + ArrDots[0]).css({ 'background-color': 'red', });
 
                 });

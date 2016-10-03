@@ -45,7 +45,7 @@
 
 
             function prev() {
-                
+
                 $(options.slides).animate({
                     'margin-left': -w
                 }, 400, function() {
@@ -54,6 +54,8 @@
                     // раскрашивание точек
                     $(options.circles + ' div').css({ 'background-color': 'gray', });
                     ArrDots.unshift(ArrDots.pop());
+                    $('.' + ArrDots[0]).attr('act', 'active');
+
                     $('.' + ArrDots[0]).css({ 'background-color': 'red', });
 
 
@@ -62,7 +64,7 @@
             }
 
             function next() {
-                
+
                 $(options.slides).animate({
                     'margin-left': w
                 }, 400, function() {
